@@ -1,3 +1,4 @@
+![](https://views.whatilearened.today/views/github/Junwu0615/Crawler-Keywords-And-Use-LineBot.svg) 
 [![](https://img.shields.io/badge/Platform-LineBot-blue.svg?style=plastic)](https://developers.line.biz/zh-hant/) 
 [![](https://img.shields.io/badge/Platform-Ngrok-blue.svg?style=plastic)](https://ngrok.com/) 
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot) 
