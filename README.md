@@ -1,4 +1,5 @@
-![](https://views.whatilearened.today/views/github/Junwu0615/Crawler-Keywords-And-Use-LineBot.svg) 
+<a href='https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot'><img alt='GitHub Views' src='https://views.whatilearened.today/views/github/Junwu0615/Crawler-Keywords-And-Use-LineBot.svg'> 
+<a href='https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/Junwu0615/dc62dfdf2b0e2710dd9a47cebee51ffa/raw/Crawler-Keywords-And-Use-LineBot_clone.json&logo=github'> </br>
 [![](https://img.shields.io/badge/Platform-LineBot-blue.svg?style=plastic)](https://developers.line.biz/zh-hant/) 
 [![](https://img.shields.io/badge/Platform-Ngrok-blue.svg?style=plastic)](https://ngrok.com/) 
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot) 
