@@ -1,6 +1,0 @@
-rich
-flask
-requests
-line-bot-sdk
-requests_html
-beautifulsoup4
