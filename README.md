@@ -66,26 +66,26 @@
 
 ## F.　如何使用
 ### STEP.1　CLONE
-```ruby
+```python
 git clone https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot.git
 ```
 ### STEP.2　將主程式中下列參數修改為複製內容。具體請參考 `流程 D.`。
-```ruby
+```python
 # LINE Parameters
 access_token = 'your channel access token'
 secret = 'your channel secret'
 ```
 ### STEP.3　開啟 cmd 輸入
-```ruby
+```python
 # INSTALL PACKAGES
 pip install -r requirements.txt
 ```
-```ruby
+```python
 # RUN
 python Crawler_Keywords_And_Use_LineBot.py
 ```
 ### STEP.4　開啟 ngrok.exe 輸入
-```ruby
+```python
 # Python 套件 Flask 的 port 為 5000
 ngrok http 5000
 ```
