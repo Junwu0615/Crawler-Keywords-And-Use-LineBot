@@ -69,7 +69,7 @@ jobs:
             -d @Crawler-Keywords-And-Use-LineBot_post_clone.json https://api.github.com/gists/${{ steps.set_id.outputs.GIST }} > /dev/null 2>&1
 
           if [ ! -f CLONE.md ]; then
-            shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url="
+            shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url="
             url="https://gist.githubusercontent.com/${{ github.actor }}/${{ steps.set_id.outputs.GIST }}/raw/Crawler-Keywords-And-Use-LineBot_clone.json"
             repo="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot"
             echo ''> CLONE.md
