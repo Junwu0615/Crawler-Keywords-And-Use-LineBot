@@ -1,8 +1,8 @@
 <a href='https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot'><img alt='GitHub Views' src='https://views.whatilearened.today/views/github/Junwu0615/Crawler-Keywords-And-Use-LineBot.svg'> 
 <a href='https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/Junwu0615/dc62dfdf2b0e2710dd9a47cebee51ffa/raw/Crawler-Keywords-And-Use-LineBot_clone.json&logo=github'> </br>
-[![](https://img.shields.io/badge/Platform-LineBot-blue.svg?style=plastic)](https://developers.line.biz/zh-hant/) 
+[![](https://img.shields.io/badge/Platform-Line_Bot-blue.svg?style=plastic)](https://developers.line.biz/zh-hant/) 
 [![](https://img.shields.io/badge/Platform-Ngrok-blue.svg?style=plastic)](https://ngrok.com/) 
-[![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot) 
+[![](https://img.shields.io/badge/Project-Web_Crawler-blue.svg?style=plastic)](https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot) 
 [![](https://img.shields.io/badge/Language-Python_3.12.0-blue.svg?style=plastic)](https://www.python.org/) </br>
 [![](https://img.shields.io/badge/Package-BeautifulSoup_4.12.2-green.svg?style=plastic)](https://pypi.org/project/beautifulsoup4/) 
 [![](https://img.shields.io/badge/Package-Requests_2.31.0-green.svg?style=plastic)](https://pypi.org/project/requests/) 
@@ -27,12 +27,12 @@
 
 ## C.　成果展示
 ### I.　加入 LINE BOT
-<img width='300' height='400' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/img/line_03.jpg"/>
+<img width='300' height='400' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/Sample/line_03.jpg"/>
 
 ### II.　批踢踢爬蟲 : 關鍵字搜尋文章
-- 情境 : 今天我想在「批踢踢」中的「工作版」找一篇文章，下的關鍵字是「台積電」，並依此搜尋「2」頁內容。
-- 在 Line 輸入 `PTT,Tech_Job版,台積電,2`
-- ![PTT關鍵字搜尋文章](/img/result_00.gif)
+- 情境 : 今天我想在「批踢踢」中的「工作版」找一篇文章，下的關鍵字是「台積電」，並依此搜尋「10」頁內容。
+- 在 Line 輸入 `PTT,Tech_Job版,台積電,10`
+- ![PTT關鍵字搜尋文章](/Sample/result_00.gif)
 
 ## D.　註冊環境帳號
 ### I.　申請 [LINE Developer](https://developers.line.biz/zh-hant/) 帳號
@@ -40,19 +40,19 @@
 1. 建立 Provider，接著輸入名稱，並點擊 Create 。
 1. 於方才建立好的 Provider 中，建立 Channel，並選擇「Message API」。
 1. 路徑 : 進入Channel > Messaging API 頁籤 > 頁面最底下取得 `Channel access token` (於流程 F. 使用)。
-- <img width='500' height='180' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/img/line_00.jpg"/>
+- <img width='500' height='180' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/Sample/line_00.jpg"/>
 
 ### II.　進入 [LINE 官方帳號](https://tw.linebiz.com/login/)
 1. LINE官方帳號管理頁面，點擊「登入管理頁面」。
 1. 可看到剛建立的 Channel，自動變成了一個官方帳號。
 1. 路徑 : 設定 > Message API，取得 `Channel secret` (於流程 F. 使用)。
-- <img width='500' height='230' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/img/line_01.jpg"/>
+- <img width='500' height='230' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/Sample/line_01.jpg"/>
 
 ### III.　申請 [NGROK](https://ngrok.com/) 帳號
 1. 根據個人環境條件，進行下載並解壓縮。
-- <img width='500' height='300' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/img/ngrok_00.jpg"/>
+- <img width='500' height='300' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/Sample/ngrok_00.jpg"/>
 2. 取得 AuthToken。
-- <img width='500' height='150' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/img/ngrok_01.jpg"/>
+- <img width='500' height='150' src="https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot/blob/main/Sample/ngrok_01.jpg"/>
 3. 打開 ngrok.exe，並將 AuthToken 貼上 `ngrok config add-authtoken <your authtoken>` (於流程 F. 使用)。</br>
 #將複製的 AuthToken 取代其內容 `<your authtoken>` 。
 
@@ -69,20 +69,18 @@
 ```python
 git clone https://github.com/Junwu0615/Crawler-Keywords-And-Use-LineBot.git
 ```
-### STEP.2　將主程式中下列參數修改為複製內容。具體請參考 `流程 D.`。
+### STEP.2　變更檔名並修改內容
+#### 將 Depend 中的 `token_.txt` 變更檔名 `token.txt`，並修改內容。具體請參考 `流程 D.`。
 ```python
-# LINE Parameters
-access_token = 'your channel access token'
-secret = 'your channel secret'
+access_token,[Fill In Your Access Token]
+secret,[Fill In Your Secret]
 ```
 ### STEP.3　開啟 cmd 輸入
 ```python
-# INSTALL PACKAGES
 pip install -r requirements.txt
 ```
 ```python
-# RUN
-python Crawler_Keywords_And_Use_LineBot.py
+python Entry.py
 ```
 ### STEP.4　開啟 ngrok.exe 輸入
 ```python
