@@ -6,20 +6,21 @@ Update Time: 2024-12-01
 from rich.table import Table
 from bs4 import BeautifulSoup
 from requests_html import HTML
-from Depend.BaseLogic import BaseLogic
+
+from package.base import BaseLogic
 
 class PttFormat(BaseLogic):
     def __init__(self, obj):
         self.obj = obj
 
     @staticmethod
-    def ptt_entries(doc):
+    def entries(doc):
         html = HTML(html=doc)
         post_entries = html.find('div.r-ent')
         return post_entries
 
     @staticmethod
-    def ptt_meta(entry) -> dict:
+    def meta(entry) -> dict:
         meta = {'title': entry.find('div.title', first=True).text,
                 'push': entry.find('div.nrec', first=True).text,
                 'date': entry.find('div.date', first=True).text}
@@ -32,7 +33,7 @@ class PttFormat(BaseLogic):
         return meta
 
     @staticmethod
-    def ptt_generate_url(base, idx) -> str:
+    def generate_url(base, idx) -> str:
         return base + str(idx) + '.html'
 
     def get_url(self, event_task) -> tuple:
@@ -50,7 +51,7 @@ class PttFormat(BaseLogic):
 
     def search(self, url, kw):
         res = self.get_source(url)
-        post_entries = PttFormat.ptt_entries(res.text)
+        post_entries = PttFormat.entries(res.text)
         table = Table(show_header=True, width=120)
         table.add_column('PoP', width=0)
         table.add_column("", width=0)
@@ -59,9 +60,8 @@ class PttFormat(BaseLogic):
         table.add_column('Date', width=1)
         table.add_column('URL', width=15)
         for entry in post_entries:
-            meta = PttFormat.ptt_meta(entry)
+            meta = PttFormat.meta(entry)
             if kw in meta['title'].lower() and not '截止' in meta['title'] and not '已滿' in meta['title']:
                 message = f"{meta['title']} https://www.ptt.cc{meta['link']}\n\n"
                 self.obj.deque_article.append(message)
             table.add_row(meta['push'], "", meta['title'], meta['author'], meta['date'], meta['link'])
-        # self.obj.console.print(table)

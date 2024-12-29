@@ -11,8 +11,8 @@ from collections import deque
 from rich.console import Console
 from linebot import LineBotApi, WebhookHandler
 
-from Depend.PttFormat import PttFormat
-from Depend.BaseLogic import BaseLogic
+from package.ptt import PttFormat
+from package.base import BaseLogic
 
 class LineBotProcess(BaseLogic):
     def __init__(self):
@@ -32,7 +32,7 @@ class LineBotProcess(BaseLogic):
     @staticmethod
     def token_settings() -> tuple:
         linebot_api, handler = None, None
-        for _ in [i for i in open('Depend/token.txt', 'r')]:
+        for _ in [i for i in open('package/token.txt', 'r')]:
             idx = _.split(',')
             if idx[0] == 'access_token':
                 linebot_api = LineBotApi(idx[1].replace('\n', ''))
@@ -59,7 +59,7 @@ class LineBotProcess(BaseLogic):
                     desc = f'[{datetime.now()}] 開始執行 | 監聽關鍵字: {kw} | 搜尋進度'
                     self.deque_article.appendleft(f'已找到您所追蹤的關鍵字「{kw}」的文章： \n')
                     for page in tqdm(range(1, max_pages+1), position=0, desc=desc):
-                        self.ptt.search(url=PttFormat.ptt_generate_url(base, idx), kw=kw)
+                        self.ptt.search(url=PttFormat.generate_url(base, idx), kw=kw)
                         page += 1
                         idx -= 1
                     if len(self.deque_article) == 0: return '在該版搜尋了' + str(max_pages) + '頁都未找到符合關鍵字的文章 !'

@@ -5,7 +5,7 @@ Update Time: 2024-12-01
 """
 from flask import Flask
 from linebot.models import TextSendMessage
-from Depend.LineBotProcess import LineBotProcess
+from package.linebot import LineBotProcess
 
 lbp = LineBotProcess()
 app = Flask(__name__)
